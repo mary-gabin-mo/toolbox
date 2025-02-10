@@ -1,4 +1,3 @@
-version: '3.8'
 services:
 
   # Building and testing environment
@@ -7,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     image: ghcr.io/growlf/toolbox:latest
-    environment:
-      - TESTVAR=${TESTVAR:/src}
+    # environment:
+    #   - TESTVAR=${TESTVAR:/src}
     stdin_open: true
     tty: true
     command: ["/bin/zsh"]
@@ -22,8 +21,8 @@ services:
   # Example container with DooD and host file/net access
   app1:
     image: ghcr.io/growlf/toolbox:latest
-    environment:
-      - TESTVAR=${TESTVAR:/src}
+    # environment:
+    #   - TESTVAR=${TESTVAR:/src}
     stdin_open: true
     tty: true
     command: ["/bin/zsh"]
@@ -36,8 +35,8 @@ services:
   # Example of running the same image with different intent
   app2:
     image: ghcr.io/growlf/toolbox:latest
-    environment:
-      - TESTVAR=${TESTVAR:/src}
+    # environment:
+    #   - TESTVAR=${TESTVAR:/src}
     stdin_open: true
     tty: true
     command: ["/bin/bash"]
